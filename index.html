@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Worlding Workshop</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+	<meta name="referrer" content="origin-when-cross-origin" />
+  <link rel="icon" 
+        type="image/png" 
+        href="./favicon-32x32.png" />
+        <link rel="icon" 
+        type="image/png" 
+        href="./favicon-32x32.png" />
+        <link rel="preload" as="image" href="./result.png">
+        <script  type="module" src="/index.js"></script>      
+</head>
+<body>
+    <div class="loading-game">
+      <div class="game-title">
+        <h1>Worlding Workshop</h1>
+      </div>
+      <img class="loading-game-img" src="./loading.jpg" >
+      <div class="game-loading-text">Loading game</div>
+    </div>
+    
+    <div class="fullScreen">
+      <div id="root"></div>
+      <div class="score">0</div>
+      <div class="time">60 s</div>
+      <div class="full">Fullscreen</div>
+
+      <div class="control">
+        <div class="up">Jump</div>
+        <div class="left">&larr;</div>
+        <div class="right">&rarr;</div>
+      </div>
+
+      <div class="results js-hidden">
+        <img src="./result.png">
+        <div class="results-score" ></div>
+        <div class="result-instructions">Play again</div>
+      </div>
+
+    </div>
+</body>
+</html>
