@@ -30,6 +30,7 @@ function createScene(options) {
       this.groundLayer = map.createLayer('walk', tileset)
       this.front = map.createLayer('front', tileset)
       this.overlap = map.createLayer('overlap', tileset)
+      this.minus = map.createLayer('minus', tileset)
       this.front.setDepth(10)
       this.front.setScrollFactor(1.1)
       this.back.setScrollFactor(0.7)
@@ -42,6 +43,7 @@ function createScene(options) {
 
       this.groundLayer.setCollisionByProperty({ collides: true })
       this.overlap.setCollisionByProperty({ collides: true })
+      this.minus.setCollisionByProperty({ collides: true })
       this.physics.world.addCollider(this.groundLayer, this.player.sprite)
 
       this.physics.add.overlap(
@@ -51,11 +53,24 @@ function createScene(options) {
         process,
         this
       )
+      this.physics.add.overlap(
+        this.player.sprite,
+        this.minus,
+        collectCoinMinus,
+        process,
+        this
+      )
 
       function collectCoin(player, tile) {
         tile.tilemapLayer.removeTileAt(tile.x, tile.y)
         tile.destroy(tile.x, tile.y) // remove the tile/coin
         score.up(10)
+        return false
+      }
+      function collectCoinMinus(player, tile) {
+        tile.tilemapLayer.removeTileAt(tile.x, tile.y)
+        tile.destroy(tile.x, tile.y) // remove the tile/coin
+        score.down(10)
         return false
       }
 

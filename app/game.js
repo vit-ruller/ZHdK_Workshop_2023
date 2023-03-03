@@ -16,7 +16,7 @@ const config = {
   parent: document.querySelector('.fullScreen'),
   fullscreenTarget: document.querySelector('.fullScreen'),
   pixelArt: true,
-  backgroundColor: 'black',
+  backgroundColor: 'rgba(255, 255, 255, 0)',
   scene: [PlatformerScene],
   physics: {
     default: 'arcade',

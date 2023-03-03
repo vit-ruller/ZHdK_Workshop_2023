@@ -13,6 +13,12 @@ class Score {
         this.value = this.value + increment
         this.score = this.value + increment
     }
+    down(increment) {
+        if (this.value - increment >= 0) {
+            this.value = this.value - increment
+            this.score = this.value - increment
+        }
+    }
 
     get() {
         return this.value
